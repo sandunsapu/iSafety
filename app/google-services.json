@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "999209347351",
+    "project_id": "isafety-b826c",
+    "storage_bucket": "isafety-b826c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999209347351:android:ad3bd1e074be65bdb32f52",
+        "android_client_info": {
+          "package_name": "com.example.isafety"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999209347351-9k79ig96mmubtjobjplqau6inpshqklf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.isafety",
+            "certificate_hash": "239fc532146554d783ecb2ddcd406eb09b300c45"
+          }
+        },
+        {
+          "client_id": "999209347351-jn2ovnpv53ljjipvneppt5llhgm740he.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8SqOufyYNlLD6V2HighuQrftemgIQLCs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999209347351-jn2ovnpv53ljjipvneppt5llhgm740he.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
