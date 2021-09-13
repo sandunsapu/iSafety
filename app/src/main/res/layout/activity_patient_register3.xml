@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainBackground"
+    tools:context=".PatientRegister3Activity">
+    <TextView
+        android:id="@+id/patient_registration_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gothic"
+        android:text="Registration Form"
+        android:textColor="@color/grayButtons"
+        android:textSize="35sp"
+        android:textAlignment="center"
+        />
+    <TextView
+        android:id="@+id/guardians_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/patient_registration_form"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/gothic"
+        android:text="Guardians Details"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:paddingLeft="30dp"
+        />
+    <EditText
+        android:id="@+id/guardians_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/guardians_details"
+        android:hint="Guardians Name"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/guardians_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/guardians_name"
+        android:hint="Guardians Address"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/guardians_email_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/guardians_address"
+        android:hint="Guardians Email"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:inputType="textEmailAddress"
+        />
+    <EditText
+        android:id="@+id/guardians_mobile_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/guardians_email_address"
+        android:hint="Guardians Mobile Number 01"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:inputType="phone"
+        />
+    <EditText
+        android:id="@+id/guardians_mobile_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/guardians_mobile_1"
+        android:hint="Guardians Mobile Number 02"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:inputType="phone"
+        />
+    <Button
+        android:id="@+id/register_next_btn3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/guardians_mobile_2"
+        android:background="@drawable/input_design"
+        android:layout_marginTop="150dp"
+        android:text="Next"
+        android:textSize="25dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:padding="20dp"
+        android:textAllCaps="false"
+        />
+
+</RelativeLayout>
