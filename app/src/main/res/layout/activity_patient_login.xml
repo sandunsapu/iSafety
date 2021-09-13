@@ -25,7 +25,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="483dp"
-        android:text="WELCOME !"
+        android:text="Welcome !"
+        android:fontFamily="@font/gothic"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="50sp" />
@@ -125,11 +126,11 @@
         android:layout_marginTop="44dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="39dp"
-        android:background="@drawable/input_design"
+        android:background="#21374e"
         android:padding="20dp"
         android:text="Sign Up"
         android:textAllCaps="false"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="#d5d5d5"
         android:textSize="25sp"
         android:textStyle="bold" />
 
