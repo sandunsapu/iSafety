@@ -40,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        doctorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DoctorLoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
