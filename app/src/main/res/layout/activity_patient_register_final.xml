@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainBackground"
+    tools:context=".PatientRegisterFinalActivity">
+
+    <TextView
+        android:id="@+id/patient_registration_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gothic"
+        android:text="Registration Form"
+        android:textColor="@color/grayButtons"
+        android:textSize="35sp"
+        android:textAlignment="center"
+        />
+    <TextView
+        android:id="@+id/user_agreement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/patient_registration_form"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/gothic"
+        android:text="User Agreement"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:paddingLeft="30dp"
+        />
+
+    <TextView
+        android:id="@+id/user_agreement_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_agreement"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="20sp"
+        android:paddingStart="20sp"
+        android:text="By clicking this button you will agree our privacy policy. Please read our privacy policy : www.isafety.com/privacy_policy.php "
+        android:inputType="textMultiLine"
+        android:lines="10"
+        android:maxLines="10"
+        android:minLines="10"
+        android:background="@drawable/input_design"
+        />
+    <com.rey.material.widget.CheckBox
+        android:id="@+id/agree_checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="150dp"
+        android:layout_marginTop="20dp"
+        android:text="Agree"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/user_agreement_area"/>
+
+    <Button
+        android:id="@+id/final_register_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/agree_checkbox"
+        android:background="@drawable/input_design"
+        android:text="Register"
+        android:textSize="25dp"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:padding="15dp"
+        android:textAllCaps="false"
+        />
+
+</RelativeLayout>
