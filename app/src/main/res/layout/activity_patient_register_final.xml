@@ -50,14 +50,18 @@
         />
     <com.rey.material.widget.CheckBox
         android:id="@+id/agree_checkbox"
+        style="@style/Material.Drawable.CheckBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="150dp"
         android:layout_marginRight="150dp"
         android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:text="Agree"
         android:gravity="center_vertical"
-        android:layout_below="@+id/user_agreement_area"/>
+        android:layout_below="@+id/user_agreement_area"
+        app:cbd_strokeColor="@color/colorPrimaryDark"/>
 
     <Button
         android:id="@+id/final_register_btn"
