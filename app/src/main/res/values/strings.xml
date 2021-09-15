@@ -13,4 +13,9 @@
     <string name="title_activity_main2">MainActivity2</string>
     <string name="medical_condition">Medical Condition</string>
     <string name="isafetylogo">iSafetyLogo</string>
+    <string name="Instructions">Instructions</string>
+    <string name="Dashboard">Dashboard</string>
+    <string name="Reports">Reports</string>
+    <string name="Notifications">Notifications</string>
+    <string name="Settings">Settings</string>
 </resources>

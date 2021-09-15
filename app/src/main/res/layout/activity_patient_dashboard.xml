@@ -31,6 +31,16 @@
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
         />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/patient_bottom_navigation"
+        android:background="@color/grayButtons"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/menu_navigation"
+        android:layout_alignParentBottom="true"
+        />
 
 
 </RelativeLayout>

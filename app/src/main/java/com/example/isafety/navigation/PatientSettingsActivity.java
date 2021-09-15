@@ -1,15 +1,16 @@
-package com.example.isafety;
+package com.example.isafety.navigation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class PatientDashboardActivity extends AppCompatActivity {
+import com.example.isafety.R;
+
+public class PatientSettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patient_dashboard);
-
+        setContentView(R.layout.activity_patient_settings);
     }
 }
