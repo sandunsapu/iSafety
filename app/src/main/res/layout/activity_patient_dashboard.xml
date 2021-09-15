@@ -14,7 +14,7 @@
         android:layout_height="250dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="-50dp"
-        android:src="@drawable/newLogo"
+        android:src="@drawable/new_logo"
         android:contentDescription="@string/isafetylogo"/>
 
     <TextView
