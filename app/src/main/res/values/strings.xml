@@ -11,4 +11,6 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="medical_condition">Medical Condition</string>
+    <string name="isafetylogo">iSafetyLogo</string>
 </resources>
