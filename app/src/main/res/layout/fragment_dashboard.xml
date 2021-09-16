@@ -6,9 +6,25 @@
     tools:context=".DashboardFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/dashboard_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/new_logo_navigation"
+        android:contentDescription="@string/logodashboard" />
+
     <TextView
+        android:id="@+id/text_line_dashboard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/gothic"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="@string/medical_condition"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
 </FrameLayout>

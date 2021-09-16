@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/dashboard"
+        android:id="@+id/menu_dashboard"
         android:title="@string/Dashboard"
         android:icon="@drawable/dash_board_home"/>
     <item
-        android:id="@+id/instructions"
+        android:id="@+id/menu_instructions"
         android:title="@string/Instructions"
         android:icon="@drawable/dash_board_doctor"/>
     <item
-        android:id="@+id/reports"
+        android:id="@+id/menu_reports"
         android:title="@string/Reports"
         android:icon="@drawable/dash_board_report"/>
     <item
-        android:id="@+id/notifications"
+        android:id="@+id/menu_notifications"
         android:title="@string/Notifications"
         android:icon="@drawable/dash_board_notification"/>
     <item
-        android:id="@+id/settings"
+        android:id="@+id/menu_settings"
         android:title="@string/Settings"
         android:icon="@drawable/dash_board_settings"/>
 

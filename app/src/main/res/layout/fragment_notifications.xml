@@ -7,8 +7,15 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/text_line_dashboard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/gothic"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="@string/Notifications"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
 </FrameLayout>

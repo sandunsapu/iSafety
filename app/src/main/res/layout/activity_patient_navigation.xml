@@ -6,31 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mainBackground"
-    tools:context=".PatientDashboardActivity">
+    tools:context=".PatientNavigationActivity">
 
-    <ImageView
-        android:id="@+id/dashboard_logo"
-        android:layout_width="200dp"
-        android:layout_height="250dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-50dp"
-        android:src="@drawable/new_logo"
-        android:contentDescription="@string/isafetylogo"/>
 
-    <TextView
-        android:id="@+id/dashboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/dashboard_logo"
-        android:layout_marginTop="-40dp"
-        android:background="@color/colorPrimary"
-        android:fontFamily="@font/gothic"
-        android:text="@string/medical_condition"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        />
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
