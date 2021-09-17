@@ -109,8 +109,6 @@ public class PatientRegisterActivity extends AppCompatActivity {
 
     private void ValidatePatient(String fullname, String mobile, String password) {
 
-
-
         final DatabaseReference RootRef;
         RootRef= FirebaseDatabase.getInstance().getReference();
 
