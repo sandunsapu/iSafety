@@ -1,4 +1,4 @@
-package com.example.isafety;
+package com.example.isafetybots;
 
 import androidx.appcompat.app.AppCompatActivity;
 

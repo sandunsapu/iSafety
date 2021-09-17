@@ -1,4 +1,4 @@
-package com.example.isafety;
+package com.example.isafetybots;
 
 import org.junit.Test;
 

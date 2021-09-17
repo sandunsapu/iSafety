@@ -1,23 +1,24 @@
 {
   "project_info": {
     "project_number": "289906388003",
+    //"firebase_url": "https://isafety-7e674-default-rtdb.firebaseio.com",
     "project_id": "isafety-7e674",
     "storage_bucket": "isafety-7e674.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:289906388003:android:b3a4757521edaaf8f99596",
+        "mobilesdk_app_id": "1:289906388003:android:51b0d3daa211d94ff99596",
         "android_client_info": {
-          "package_name": "com.example.isafety"
+          "package_name": "com.example.isafetybots"
         }
       },
       "oauth_client": [
         {
-          "client_id": "289906388003-kv36hk43gts8onmd0alnshbckp43cf03.apps.googleusercontent.com",
+          "client_id": "289906388003-527jbidsn7bn97u9n19827d12img77d6.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.isafety",
+            "package_name": "com.example.isafetybots",
             "certificate_hash": "239fc532146554d783ecb2ddcd406eb09b300c45"
           }
         },

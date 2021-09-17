@@ -1,10 +1,10 @@
-package com.example.isafety.navigation;
+package com.example.isafetybots.navigation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.isafety.R;
+import com.example.isafetybots.R;
 
 public class PatientInstructionsActivity extends AppCompatActivity {
 

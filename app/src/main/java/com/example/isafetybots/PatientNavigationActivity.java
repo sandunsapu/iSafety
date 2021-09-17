@@ -1,4 +1,4 @@
-package com.example.isafety;
+package com.example.isafetybots;
 
 import android.os.Bundle;
 import android.view.MenuItem;
