@@ -98,10 +98,10 @@ public class PatientRegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Please enter your Confirmed Password here", Toast.LENGTH_SHORT).show();
         }
         else {
-            //loadingBar.setTitle("Create Account");
-            //loadingBar.setMessage("Please wait while we are checking the credentials");
-            //loadingBar.setCanceledOnTouchOutside(false);
-            //loadingBar.show();
+            loadingBar.setTitle("Create Account");
+            loadingBar.setMessage("Please wait while we are checking the credentials");
+            loadingBar.setCanceledOnTouchOutside(false);
+            loadingBar.show();
 
             ValidatePatient(fullname,email,password);
 
@@ -110,6 +110,8 @@ public class PatientRegisterActivity extends AppCompatActivity {
     }
 
     private void ValidatePatient(String fullname, String email, String password) {
+
+
 
         final DatabaseReference RootRef;
         RootRef= FirebaseDatabase.getInstance().getReference();
@@ -130,14 +132,14 @@ public class PatientRegisterActivity extends AppCompatActivity {
                                     if (task.isSuccessful())
                                     {
                                         Toast.makeText(PatientRegisterActivity.this, "Congratulations Your account has been created.", Toast.LENGTH_SHORT).show();
-                                        //loadingBar.dismiss();
+                                        loadingBar.dismiss();
 
                                         Intent intent = new Intent(PatientRegisterActivity.this,PatientRegister2Activity.class);
                                         startActivity(intent);
                                     }
                                     else 
                                     {
-                                        //loadingBar.dismiss();
+                                        loadingBar.dismiss();
                                         Toast.makeText(PatientRegisterActivity.this, "Network Error : Please try again after some time...", Toast.LENGTH_SHORT).show();
                                     }
 

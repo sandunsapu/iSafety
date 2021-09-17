@@ -1,21 +1,20 @@
 {
   "project_info": {
-    "project_number": "999209347351",
-    "firebase_url": "https://isafety-b826c-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "isafety-b826c",
-    "storage_bucket": "isafety-b826c.appspot.com"
+    "project_number": "289906388003",
+    "project_id": "isafety-7e674",
+    "storage_bucket": "isafety-7e674.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:999209347351:android:ad3bd1e074be65bdb32f52",
+        "mobilesdk_app_id": "1:289906388003:android:b3a4757521edaaf8f99596",
         "android_client_info": {
           "package_name": "com.example.isafety"
         }
       },
       "oauth_client": [
         {
-          "client_id": "999209347351-9k79ig96mmubtjobjplqau6inpshqklf.apps.googleusercontent.com",
+          "client_id": "289906388003-kv36hk43gts8onmd0alnshbckp43cf03.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.isafety",
@@ -23,20 +22,20 @@
           }
         },
         {
-          "client_id": "999209347351-jn2ovnpv53ljjipvneppt5llhgm740he.apps.googleusercontent.com",
+          "client_id": "289906388003-57bji27sra8ta41i08rrg206fem7r8ir.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA8SqOufyYNlLD6V2HighuQrftemgIQLCs"
+          "current_key": "AIzaSyAPymZeQjTbEZgQ34WmINnTHFCRbG65dk0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "999209347351-jn2ovnpv53ljjipvneppt5llhgm740he.apps.googleusercontent.com",
+              "client_id": "289906388003-57bji27sra8ta41i08rrg206fem7r8ir.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
