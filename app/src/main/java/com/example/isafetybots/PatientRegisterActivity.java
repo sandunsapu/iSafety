@@ -101,13 +101,13 @@ public class PatientRegisterActivity extends AppCompatActivity {
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
 
-            ValidatePatient(fullname,email,password);
+            ValidatePatient(fullname,mobile,password);
 
         }
 
     }
 
-    private void ValidatePatient(String fullname, String email, String password) {
+    private void ValidatePatient(String fullname, String mobile, String password) {
 
 
 
@@ -117,14 +117,14 @@ public class PatientRegisterActivity extends AppCompatActivity {
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(!(snapshot.child("Patients").child(email).exists()))
+                if(!(snapshot.child("Patients").child(mobile).exists()))
                 {
                     HashMap<String, Object> patientDataMap=new HashMap<>();
-                    patientDataMap.put("email",email);
+                    patientDataMap.put("mobile",mobile);
                     patientDataMap.put("fullName",fullname);
                     patientDataMap.put("password",password);
 
-                    RootRef.child("Patients").child(email).updateChildren(patientDataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    RootRef.child("Patients").child(mobile).updateChildren(patientDataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful())
@@ -147,7 +147,7 @@ public class PatientRegisterActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(PatientRegisterActivity.this, "This "+email+" already exists.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PatientRegisterActivity.this, "This "+mobile+" already exists.", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                     Toast.makeText(PatientRegisterActivity.this, "Please try again using another email address", Toast.LENGTH_SHORT).show();
 
