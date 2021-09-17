@@ -151,7 +151,7 @@ public class PatientRegisterActivity extends AppCompatActivity {
                     loadingBar.dismiss();
                     Toast.makeText(PatientRegisterActivity.this, "Please try again using another email address", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(PatientRegisterActivity.this, patientLoginActivity.class);
+                    Intent intent = new Intent(PatientRegisterActivity.this, PatientLoginActivity.class);
                     startActivity(intent);
                 }
             }

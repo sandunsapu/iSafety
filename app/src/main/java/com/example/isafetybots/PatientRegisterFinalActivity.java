@@ -20,7 +20,7 @@ public class PatientRegisterFinalActivity extends AppCompatActivity {
         patientRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PatientRegisterFinalActivity.this, patientLoginActivity.class);
+                Intent intent = new Intent(PatientRegisterFinalActivity.this, PatientLoginActivity.class);
                 startActivity(intent);
             }
         });

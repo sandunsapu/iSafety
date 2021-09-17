@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class patientLoginActivity extends AppCompatActivity {
+public class PatientLoginActivity extends AppCompatActivity {
     private Button loginButton,signInButton;
     private EditText inputEmail,inputPassword;
 
@@ -26,7 +26,7 @@ public class patientLoginActivity extends AppCompatActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(patientLoginActivity.this,PatientRegisterActivity.class);
+                Intent intent = new Intent(PatientLoginActivity.this,PatientRegisterActivity.class);
                 startActivity(intent);
             }
         });
@@ -34,7 +34,7 @@ public class patientLoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(patientLoginActivity.this,PatientNavigationActivity.class);
+                Intent intent = new Intent(PatientLoginActivity.this,PatientNavigationActivity.class);
                 startActivity(intent);
             }
         });

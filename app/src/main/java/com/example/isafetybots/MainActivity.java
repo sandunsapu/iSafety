@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         patientBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, patientLoginActivity.class);
+                Intent intent = new Intent(MainActivity.this, PatientLoginActivity.class);
                 startActivity(intent);
             }
         });
