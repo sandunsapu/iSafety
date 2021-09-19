@@ -24,4 +24,5 @@
     <string name="your_phone_number">Your Phone Number</string>
     <string name="birthday">Birthday</string>
     <string name="your_email_address">Your Email Address</string>
+    <string name="logout">Logout</string>
 </resources>
