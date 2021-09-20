@@ -66,7 +66,19 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        View view= inflater.inflate(R.layout.fragment_settings, container, false);
+
+        logoutBtn=(Button) view.findViewById(R.id.logout);
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getActivity(),PatientLoginActivity.class);
+                intent.putExtra("Logout","Logging Out");
+                startActivity(intent);
+            }
+        });
+
+        return view;
 
     }
 
