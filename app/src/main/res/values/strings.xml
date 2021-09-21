@@ -25,4 +25,9 @@
     <string name="birthday">Birthday</string>
     <string name="your_email_address">Your Email Address</string>
     <string name="logout">Logout</string>
+    <string name="change_account_details">Change Account Details</string>
+    <string name="change_payment_method">Change Payment Method</string>
+    <string name="change_doctor">Change Doctor</string>
+    <string name="emergency_contacts">Emergency Contacts</string>
+    <string name="report_problem">Report Problem</string>
 </resources>
