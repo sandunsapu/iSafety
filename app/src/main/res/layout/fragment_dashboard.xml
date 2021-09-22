@@ -30,7 +30,7 @@
 
     <LinearLayout
         android:layout_width="180dp"
-        android:layout_height="150dp"
+        android:layout_height="140dp"
         android:id="@+id/linear_layout_o2"
         android:background="@drawable/input_design_gray"
         android:layout_marginTop="200dp"
@@ -48,20 +48,19 @@
             />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dashboard_o2_level"
-            android:text="XX"
-            android:textSize="60sp"
+            android:text="97"
+            android:textSize="50sp"
             android:layout_gravity="center_vertical"
-
             />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="180dp"
-        android:layout_height="150dp"
+        android:layout_height="140dp"
         android:id="@+id/linear_layout_temp"
         android:background="@drawable/input_design_gray"
         android:layout_marginTop="200dp"
@@ -80,11 +79,11 @@
             />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dashboard_temp_level"
-            android:text="XX"
-            android:textSize="60sp"
+            android:text="35"
+            android:textSize="50sp"
             android:layout_gravity="center_vertical"
 
             />
@@ -93,16 +92,16 @@
 
     <LinearLayout
         android:layout_width="380dp"
-        android:layout_height="150dp"
+        android:layout_height="140dp"
         android:id="@+id/linear_layout_heart"
         android:background="@drawable/input_design_gray"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="360dp"
         android:layout_marginStart="15dp"
         android:padding="20dp"
 
         >
         <ImageView
-            android:layout_width="200dp"
+            android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/dashboard_heart_rate"
             android:src="@drawable/dash_heart_rate"
@@ -111,12 +110,22 @@
             />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dashboard_heat_rate_level"
-            android:text="XX"
+            android:text="67"
             android:textSize="60sp"
             android:layout_gravity="center_vertical"
+            android:gravity="center"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dashboard_heat_rate_units"
+            android:text="bpm"
+            android:textSize="40sp"
+            android:layout_gravity="center"
             android:gravity="center"
 
             />
@@ -124,36 +133,72 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="380dp"
-        android:layout_height="150dp"
         android:id="@+id/linear_layout_bluetooth"
-        android:background="@drawable/input_design_gray"
-        android:layout_marginTop="370dp"
+        android:layout_width="380dp"
+        android:layout_height="140dp"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="520dp"
+        android:background="@drawable/input_design_gray"
         android:padding="20dp"
 
         >
+
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="150dp"
             android:id="@+id/dashboard_bluetooth"
-            android:src="@drawable/"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
             android:layout_gravity="center_vertical"
+            android:src="@drawable/dash_bluetooth_watch"
 
             />
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/dashboard_bluetooth_connection"
-            android:text="XX"
-            android:textSize="60sp"
-            android:layout_gravity="center_vertical"
-            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/dash_battery_linear_layout"
+            >
 
-            />
+            <TextView
+                android:id="@+id/dashboard_bluetooth_connection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|bottom"
+                android:gravity="center"
+                android:text="Disconnected"
+                android:textSize="30sp" />
+
+            <LinearLayout
+                android:id="@+id/battery_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/dashboard_battery"
+                    android:layout_width="52dp"
+                    android:layout_height="62dp"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/dash_battery" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/battery_percentage"
+                    android:text="100"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="40sp"
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
+
 
 
 
