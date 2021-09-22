@@ -7,6 +7,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.isafetybots.Fragments.DashboardFragment;
+import com.example.isafetybots.Fragments.InstructionsFragment;
+import com.example.isafetybots.Fragments.NotificationsFragment;
+import com.example.isafetybots.Fragments.ReportsFragment;
+import com.example.isafetybots.Fragments.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class PatientNavigationActivity extends AppCompatActivity {

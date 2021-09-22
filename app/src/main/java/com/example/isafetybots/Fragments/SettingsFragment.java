@@ -1,4 +1,4 @@
-package com.example.isafetybots;
+package com.example.isafetybots.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.isafetybots.PatientLoginActivity;
+import com.example.isafetybots.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -73,7 +76,7 @@ public class SettingsFragment extends Fragment {
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getActivity(),PatientLoginActivity.class);
+                Intent intent= new Intent(getActivity(), PatientLoginActivity.class);
                 intent.putExtra("Logout","Logging Out");
                 startActivity(intent);
                 Toast.makeText(getActivity(), "Logging Out", Toast.LENGTH_SHORT).show();

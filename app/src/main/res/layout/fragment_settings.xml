@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsFragment">
+    tools:context=".Fragments.SettingsFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/Change_acc_details_btn"
         android:text="@string/change_account_details"
+        android:textSize="20sp"
         android:textAllCaps="false"
         android:background="@drawable/buttons"
         android:layout_marginTop="100dp"
@@ -35,6 +36,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/change_payment_method_btn"
         android:text="@string/change_payment_method"
+        android:textSize="20sp"
         android:textAllCaps="false"
         android:background="@drawable/buttons"
         android:layout_marginTop="180dp"
@@ -47,6 +49,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/change_doctor_btn"
         android:text="@string/change_doctor"
+        android:textSize="20sp"
         android:textAllCaps="false"
         android:background="@drawable/buttons"
         android:layout_marginTop="260dp"
@@ -59,6 +62,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/emergency_contacts_btn"
         android:text="@string/emergency_contacts"
+        android:textSize="20sp"
         android:textAllCaps="false"
         android:background="@drawable/buttons"
         android:layout_marginTop="340dp"
@@ -71,6 +75,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/report_problem_btn"
         android:text="@string/report_problem"
+        android:textSize="20sp"
         android:textAllCaps="false"
         android:background="@drawable/buttons"
         android:layout_marginTop="420dp"
@@ -83,6 +88,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/logout"
         android:text="@string/logout"
+        android:textSize="20sp"
         android:textAllCaps="false"
         android:background="@drawable/buttons"
         android:layout_marginTop="500dp"
