@@ -1,4 +1,4 @@
-package com.example.isafetybots;
+package com.example.isafetybots.PatientsRegister;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.isafetybots.R;
 
 public class PatientRegister2Activity extends AppCompatActivity {
     private Button diseaseSelect,reportUpload,registerNextBtn2,skipBtn;

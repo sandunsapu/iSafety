@@ -4,18 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8DDD8B8"
     tools:context=".PatientLoginActivity">
 
-    <ImageView
-        android:id="@+id/isafetyLogo2"
-        android:layout_width="265dp"
-        android:layout_height="285dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="71dp"
-        android:layout_marginBottom="521dp"
-        android:src="@drawable/logo" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#ffddee"
+        android:id="@+id/logo_linear_layout"
+        >
+        <ImageView
+            android:id="@+id/isafetyLogo2"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="80dp"
+            android:src="@drawable/new_logo"
+            />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/welcome_note"
@@ -24,22 +29,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="483dp"
-        android:text="Welcome !"
-        android:fontFamily="@font/gothicbi"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="50sp" />
-    <TextView
-        android:id="@+id/doctor_welcome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="430dp"
-        android:text="Doctor"
+        android:layout_marginBottom="415dp"
+        android:text="Welcome !\nDoctor"
         android:fontFamily="@font/gothicbi"
         android:textStyle="bold"
         android:textAlignment="center"
@@ -141,11 +132,11 @@
         android:layout_marginTop="44dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="39dp"
-        android:background="#21374e"
+        android:background="@drawable/input_design_gray_fill"
         android:padding="20dp"
         android:text="Sign Up"
         android:textAllCaps="false"
-        android:textColor="#d5d5d5"
+        android:textColor="#FFFFFF"
         android:textSize="25sp"
         android:textStyle="bold" />
 

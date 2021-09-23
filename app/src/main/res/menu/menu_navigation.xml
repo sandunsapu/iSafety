@@ -2,24 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_dashboard"
-        android:title="@string/Dashboard"
-        android:icon="@drawable/dash_board_home"/>
+        android:icon="@drawable/dash_board_home" />
     <item
         android:id="@+id/menu_instructions"
-        android:title="@string/Instructions"
-        android:icon="@drawable/dash_board_doctor"/>
+        android:icon="@drawable/dash_board_doctor" />
     <item
         android:id="@+id/menu_reports"
-        android:title="@string/Reports"
-        android:icon="@drawable/dash_board_report"/>
+        android:icon="@drawable/dash_board_report" />
     <item
         android:id="@+id/menu_notifications"
-        android:title="@string/Notifications"
-        android:icon="@drawable/dash_board_notification"/>
+        android:icon="@drawable/dash_board_notification" />
     <item
         android:id="@+id/menu_settings"
-        android:title="@string/Settings"
-        android:icon="@drawable/dash_board_settings"/>
+        android:icon="@drawable/dash_board_settings" />
 
 
 </menu>

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E8DDD8B8"
-    tools:context=".PatientRegisterActivity">
+    tools:context=".PatientsRegister.PatientRegisterActivity">
     <TextView
         android:id="@+id/doctor_registration_form"
         android:layout_width="match_parent"

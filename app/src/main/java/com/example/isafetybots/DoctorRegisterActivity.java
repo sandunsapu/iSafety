@@ -32,7 +32,7 @@ public class DoctorRegisterActivity extends AppCompatActivity {
         doctorRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DoctorRegisterActivity.this, DoctorLoginActivity.class);
+                Intent intent = new Intent(DoctorRegisterActivity.this, DoctorRegisterFinalActivity.class);
                 startActivity(intent);
             }
         });

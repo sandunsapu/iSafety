@@ -18,5 +18,45 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/get_generated_details_btn"
+        android:text="Get Generated \nDetailed Reports"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:padding="20sp"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:background="@drawable/buttons"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/medical_reports_label"
+        android:text="Medical Reports"
+        android:textSize="30sp"
+        android:layout_marginTop="480dp"
+        android:layout_gravity="center_horizontal"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/medical_reports_upload_btn"
+        android:text="Upload"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:background="@drawable/buttons"
+        android:layout_marginTop="550dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
 
 </FrameLayout>

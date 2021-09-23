@@ -1,4 +1,4 @@
-package com.example.isafetybots;
+package com.example.isafetybots.NavigationPane;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -12,6 +12,7 @@ import com.example.isafetybots.Fragments.InstructionsFragment;
 import com.example.isafetybots.Fragments.NotificationsFragment;
 import com.example.isafetybots.Fragments.ReportsFragment;
 import com.example.isafetybots.Fragments.SettingsFragment;
+import com.example.isafetybots.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class PatientNavigationActivity extends AppCompatActivity {
