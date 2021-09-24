@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.isafetybots.Model.Patients;
 import com.example.isafetybots.NavigationPane.PatientNavigationActivity;
-import com.example.isafetybots.PatientsRegister.PatientRegisterActivity;
+import com.example.isafetybots.Patient.PatientRegisterActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

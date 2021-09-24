@@ -6,4 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".DoctorPatientListActivity">
 
+    <TextView
+        android:id="@+id/dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/gothic"
+        android:text="Patients List"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:layout_alignParentTop="true"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/patient_viewer"
+        android:layout_below="@id/dashboard"
+        android:background="@color/gray"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/patient_viewer2"
+        android:layout_below="@id/patient_viewer"
+        android:background="@color/gray"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/patient_viewer3"
+        android:layout_below="@id/patient_viewer2"
+        android:background="@color/gray"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+
 </RelativeLayout>

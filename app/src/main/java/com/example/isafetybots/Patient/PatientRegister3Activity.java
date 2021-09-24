@@ -1,4 +1,4 @@
-package com.example.isafetybots.PatientsRegister;
+package com.example.isafetybots.Patient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
