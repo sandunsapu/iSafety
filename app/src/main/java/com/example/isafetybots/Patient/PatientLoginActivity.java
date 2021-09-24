@@ -1,4 +1,4 @@
-package com.example.isafetybots;
+package com.example.isafetybots.Patient;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.isafetybots.Model.Patients;
 import com.example.isafetybots.NavigationPane.PatientNavigationActivity;
-import com.example.isafetybots.Patient.PatientRegisterActivity;
+import com.example.isafetybots.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

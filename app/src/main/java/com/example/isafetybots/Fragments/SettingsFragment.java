@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.isafetybots.PatientLoginActivity;
+import com.example.isafetybots.Patient.PatientLoginActivity;
 import com.example.isafetybots.R;
 
 /**

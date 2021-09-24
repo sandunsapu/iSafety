@@ -1,8 +1,10 @@
-package com.example.isafetybots;
+package com.example.isafetybots.Patient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.isafetybots.R;
 
 public class PatientRequestCheckupActivity extends AppCompatActivity {
 

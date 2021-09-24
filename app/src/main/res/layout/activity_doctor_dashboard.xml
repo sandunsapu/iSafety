@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DoctorDashboardActivity">
+    tools:context=".Doctor.DoctorDashboardActivity">
 
     <ImageView
         android:id="@+id/dashboard_logo"
@@ -85,7 +85,7 @@
     <ImageButton
         android:layout_width="150dp"
         android:layout_height="120dp"
-        android:id="@+id/doctor_settings"
+        android:id="@+id/doctor_settings_btn"
         android:background="@drawable/input_design_gray"
         android:src="@drawable/settings"
         android:scaleType="centerInside"
@@ -98,7 +98,7 @@
     <ImageButton
         android:layout_width="150dp"
         android:layout_height="120dp"
-        android:id="@+id/doctor_notifications"
+        android:id="@+id/doctor_notifications_btn"
         android:background="@drawable/input_design_gray"
         android:src="@drawable/notification"
         android:scaleType="centerInside"

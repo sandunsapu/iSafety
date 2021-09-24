@@ -7,6 +7,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.isafetybots.Doctor.DoctorLoginActivity;
+import com.example.isafetybots.Patient.PatientLoginActivity;
+
 public class MainActivity extends AppCompatActivity {
     private Button patientBtn,doctorBtn;
 

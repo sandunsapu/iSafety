@@ -11,19 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailedReportsActivity"></activity>
-        <activity android:name=".DoctorSendInstructionsActivity" />
-        <activity android:name=".DoctorPatientListActivity" />
-        <activity android:name=".DoctorDashboardActivity" />
-        <activity android:name=".DoctorRegisterFinalActivity" />
-        <activity android:name=".PatientRequestCheckupActivity" />
+        <activity android:name=".Doctor.DetailedReportsActivity"></activity>
+        <activity android:name=".Doctor.DoctorSendInstructionsActivity" />
+        <activity android:name=".Doctor.DoctorPatientListActivity" />
+        <activity android:name=".Doctor.DoctorDashboardActivity" />
+        <activity android:name=".Doctor.DoctorRegisterFinalActivity" />
+        <activity android:name=".Patient.PatientRequestCheckupActivity" />
         <activity android:name=".navigation.PatientSettingsActivity" />
         <activity android:name=".navigation.PatientNotificationsActivity" />
         <activity android:name=".navigation.PatientReportsActivity" />
         <activity android:name=".navigation.PatientInstructionsActivity" />
         <activity android:name=".NavigationPane.PatientNavigationActivity" />
-        <activity android:name=".DoctorRegisterActivity" />
-        <activity android:name=".DoctorLoginActivity" />
+        <activity android:name=".Doctor.DoctorRegisterActivity" />
+        <activity android:name=".Doctor.DoctorLoginActivity" />
         <activity android:name=".Patient.PatientRegisterFinalActivity" />
         <activity android:name=".Patient.PatientRegister4Activity" />
         <activity android:name=".Patient.PatientRegister3Activity" />
@@ -35,7 +35,7 @@
         <activity
             android:name=".Patient.PatientRegisterActivity"
             android:label="@string/title_activity_patient_register" />
-        <activity android:name=".PatientLoginActivity" />
+        <activity android:name=".Patient.PatientLoginActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
