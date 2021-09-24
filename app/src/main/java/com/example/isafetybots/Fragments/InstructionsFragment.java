@@ -1,5 +1,6 @@
 package com.example.isafetybots.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,7 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.isafetybots.Patient.PatientRequestCheckupActivity;
 import com.example.isafetybots.R;
 
 /**
@@ -16,6 +19,7 @@ import com.example.isafetybots.R;
  * create an instance of this fragment.
  */
 public class InstructionsFragment extends Fragment {
+    private Button requestCheckupBtn;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +65,20 @@ public class InstructionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_instructions, container, false);
+        View view= inflater.inflate(R.layout.fragment_instructions, container, false);
+
+        requestCheckupBtn=(Button)view.findViewById(R.id.request_checkup_btn);
+
+        requestCheckupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(getActivity(), PatientRequestCheckupActivity.class);
+                intent.putExtra("Requesting","Requesting");
+                startActivity(intent);
+            }
+        });
+
+        return view;
     }
 }

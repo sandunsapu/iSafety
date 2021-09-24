@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.isafetybots.DetailedReportsActivity;
 import com.example.isafetybots.R;
 
 public class DoctorSendInstructionsActivity extends AppCompatActivity {
@@ -29,7 +30,7 @@ public class DoctorSendInstructionsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(DoctorSendInstructionsActivity.this,DetailedReportsActivity.class);
+                Intent intent = new Intent(DoctorSendInstructionsActivity.this, DetailedReportsActivity.class);
                 startActivity(intent);
             }
         });
