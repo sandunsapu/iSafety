@@ -27,8 +27,18 @@ public class DoctorLoginActivity extends AppCompatActivity {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(DoctorLoginActivity.this,DoctorRegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
                 Intent intent = new Intent(DoctorLoginActivity.this,DoctorDashboardActivity.class);
                 startActivity(intent);
+
             }
         });
     }
