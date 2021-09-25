@@ -54,6 +54,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.4.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.jjoe64:graphview:4.2.2'
+    implementation 'eu.basicairdata:bluetoothhelper:1.0.5'
 
 }
 
