@@ -136,9 +136,10 @@ public class DashboardFragment extends Fragment {
     BroadcastReceiver bluetoothNewMessage=new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            bluetoothConnection.setTextColor(Color.BLUE);
+            //bluetoothConnection.setTextColor(Color.BLUE);
             final String raw=bt.getBtMsg();
-            bluetoothConnection.setText("raw"+raw);
+            //bluetoothConnection.setText("raw"+raw);
+
             if(raw!=null&&raw.contains("[")&&raw.contains("]"))
                 serialDecode(raw);          /////   serial decode method removes start and end characters
 
@@ -151,8 +152,16 @@ public class DashboardFragment extends Fragment {
             batteryPercentage.setText(getBat());
             dashboardTemp.setText(getTemp());
             //lastUpdatedlbl.setText(getLastReadTime());
-            dashboardHeartRate.setText(getHR());
-            dashboardO2.setText(getSPO2());
+
+            if (getTemp()>32) {
+                dashboardO2.setText(getSPO2());
+                dashboardHeartRate.setText(getHR());
+            } else{
+               ///// "Please wear the health monitor properly"
+                dashboardO2.setText("--");
+                dashboardHeartRate.setText("--");
+            }
+
 
             if (checkIfMute()) muteimg.setVisibility(View.INVISIBLE);
             else muteimg.setVisibility(View.VISIBLE);
@@ -174,7 +183,11 @@ public class DashboardFragment extends Fragment {
     }
 
     private String getSPO2() {
-        return items[4];
+
+        int spo2=Integer.parseInt(items[4]);
+        if (spo2>100)spo2=100;
+        return String.valueOf(spo2);
+
     }
 
     private String getHR() {
@@ -240,4 +253,7 @@ public class DashboardFragment extends Fragment {
         }
     }
 
+   
+
 }
+
