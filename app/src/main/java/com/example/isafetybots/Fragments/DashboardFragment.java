@@ -153,7 +153,7 @@ public class DashboardFragment extends Fragment {
             dashboardTemp.setText(getTemp());
             //lastUpdatedlbl.setText(getLastReadTime());
 
-            if (getTemp()>32) {
+            if (Integer.parseInt(getTemp())>32) {
                 dashboardO2.setText(getSPO2());
                 dashboardHeartRate.setText(getHR());
             } else{
