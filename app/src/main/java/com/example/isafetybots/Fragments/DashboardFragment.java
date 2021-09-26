@@ -250,11 +250,6 @@ public class DashboardFragment extends Fragment {
     }
 
 
-    private void toastMsg(String s) {
-        if(!bt.isConnected()){
-            Toast toast= Toast.makeText(this,s,Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL,0,0);
-            toast.show();}
-    }
+   
 
 }
