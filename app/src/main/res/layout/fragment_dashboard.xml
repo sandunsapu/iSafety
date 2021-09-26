@@ -10,7 +10,7 @@
     <ImageView
     android:id="@+id/dashboard_logo"
     android:layout_width="wrap_content"
-    android:layout_height="150dp"
+    android:layout_height="100dp"
     android:layout_marginTop="5dp"
     android:src="@drawable/new_logo_navigation"
     android:contentDescription="@string/logodashboard" />
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/dashboard_temp_level"
             android:text="35"
-            android:textSize="50sp"
+            android:textSize="45sp"
             android:layout_gravity="center_vertical"
 
             />
