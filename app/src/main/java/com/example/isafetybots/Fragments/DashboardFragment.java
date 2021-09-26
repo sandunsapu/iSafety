@@ -88,12 +88,12 @@ public class DashboardFragment extends Fragment {
 
         bt=BT.getInstance();
 
-        //emModebtn=findViewById(R.id.emergency_btn);
+        emModebtn=view.findViewById(R.id.emergency_mode_btn);
         //melodybtn=findViewById(R.id.melody_btn);
-        //mutebtn=findViewById(R.id.mute_btn);
-        //emModebtn.setOnClickListener(this);
-        //melodybtn.setOnClickListener(this);
-        //mutebtn.setOnClickListener(this);
+        mutebtn=view.findViewById(R.id.mute_btn);
+        emModebtn.setOnClickListener((View.OnClickListener) this);
+        //melodybtn.setOnClickListener((View.OnClickListener) this);
+        mutebtn.setOnClickListener((View.OnClickListener) this);
 
         dashboardHeartRate=view.findViewById(R.id.dashboard_heat_rate_level);
         dashboardO2=view.findViewById(R.id.dashboard_o2_level);
@@ -102,7 +102,7 @@ public class DashboardFragment extends Fragment {
         //lastUpdatedlbl=findViewById(R.id.last_tv);
         bluetoothConnection=view.findViewById(R.id.dashboard_bluetooth_connection);
 
-        //muteimg=findViewById(R.id.mute_img);
+        muteimg=view.findViewById(R.id.mute_image);
 
         LocalBroadcastManager.getInstance(getActivity()).registerReceiver(bluetoothConnectReceiver, new IntentFilter(BT.BLUETOOTH_CONNECTED));
         //Fired when the connection is lost
