@@ -139,6 +139,7 @@ public class DashboardFragment extends Fragment {
             //bluetoothConnection.setTextColor(Color.BLUE);
             final String raw=bt.getBtMsg();
             //bluetoothConnection.setText("raw"+raw);
+
             if(raw!=null&&raw.contains("[")&&raw.contains("]"))
                 serialDecode(raw);          /////   serial decode method removes start and end characters
 
@@ -151,7 +152,8 @@ public class DashboardFragment extends Fragment {
             batteryPercentage.setText(getBat());
             dashboardTemp.setText(getTemp());
             //lastUpdatedlbl.setText(getLastReadTime());
-            if (getTemp()>32) {
+
+            if (Integer.parseInt(getTemp())>32) {
                 dashboardO2.setText(getSPO2());
                 dashboardHeartRate.setText(getHR());
             } else{
@@ -181,9 +183,11 @@ public class DashboardFragment extends Fragment {
     }
 
     private String getSPO2() {
+
         int spo2=Integer.parseInt(items[4]);
         if (spo2>100)spo2=100;
         return String.valueOf(spo2);
+
     }
 
     private String getHR() {
@@ -249,12 +253,7 @@ public class DashboardFragment extends Fragment {
         }
     }
 
-
-    private void toastMsg(String s) {
-        if(!bt.isConnected()){
-            Toast toast= Toast.makeText(this,s,Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL,0,0);
-            toast.show();}
-    }
+   
 
 }
+
