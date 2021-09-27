@@ -1,5 +1,7 @@
 package com.example.isafetybots.Fragments;
 
+import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -10,12 +12,15 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import android.os.Handler;
+import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.isafetybots.BT;
 import com.example.isafetybots.R;
@@ -29,14 +34,15 @@ import java.util.Objects;
  */
 public class DashboardFragment extends Fragment {
 
-    private TextView dashboardO2,dashboardTemp,dashboardHeartRate,batteryPercentage,bluetoothConnection;
+    private TextView dashboardO2, dashboardTemp, dashboardHeartRate, batteryPercentage, bluetoothConnection;
     private BT bt;
-    private Button emModebtn,melodybtn,mutebtn;
+    private Button emModebtn, melodybtn, mutebtn;
     //private TextView hrlbl,o2lbl,batlbl,templbl,lastUpdatedlbl,bluetoothstatustv;
     private ImageView muteimg;
-    private final String SET_TIME_TAG="TI",SET_MODE_TAG="SM",SET_HRTHRESHOLD_TAG="TH",ALARM_TAG="SING";
-    private String[] items={"0","0","0","0","0","0","0"};
-    private String[] mobileNos={"0767952020","0772741400","0784320006","0763489016","0717986286"}
+    private final String SET_TIME_TAG = "TI", SET_MODE_TAG = "SM", SET_HRTHRESHOLD_TAG = "TH", ALARM_TAG = "SING";
+    private String[] items = {"0", "0", "0", "0", "0", "0", "0"};
+    private String[] mobileNos = {"0767952020", "0772741400", "0784320006", "0763489016", "0717986286"};
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -84,18 +90,18 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        bt=BT.getInstance();
+        bt = BT.getInstance();
 
-        emModebtn=view.findViewById(R.id.emergency_mode_btn);
+        emModebtn = view.findViewById(R.id.emergency_mode_btn);
         //melodybtn=findViewById(R.id.melody_btn);
-        mutebtn=view.findViewById(R.id.mute_btn);
+        mutebtn = view.findViewById(R.id.mute_btn);
         emModebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                sendBTCommand(SET_MODE_TAG,3);    ///////////////// send 3 to trigger emergency mode
+                sendBTCommand(SET_MODE_TAG, 3);    ///////////////// send 3 to trigger emergency mode
 
             }
         });
@@ -104,19 +110,19 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                sendBTCommand(SET_MODE_TAG,8);   ///////////////// send 8 to mute device
+                sendBTCommand(SET_MODE_TAG, 8);   ///////////////// send 8 to mute device
 
             }
         });
 
-        dashboardHeartRate=view.findViewById(R.id.dashboard_heat_rate_level);
-        dashboardO2=view.findViewById(R.id.dashboard_o2_level);
-        batteryPercentage=view.findViewById(R.id.battery_percentage);
-        dashboardTemp=view.findViewById(R.id.dashboard_temp_level);
+        dashboardHeartRate = view.findViewById(R.id.dashboard_heat_rate_level);
+        dashboardO2 = view.findViewById(R.id.dashboard_o2_level);
+        batteryPercentage = view.findViewById(R.id.battery_percentage);
+        dashboardTemp = view.findViewById(R.id.dashboard_temp_level);
         //lastUpdatedlbl=findViewById(R.id.last_tv);
-        bluetoothConnection=view.findViewById(R.id.dashboard_bluetooth_connection);
+        bluetoothConnection = view.findViewById(R.id.dashboard_bluetooth_connection);
 
-        muteimg=view.findViewById(R.id.mute_image);
+        muteimg = view.findViewById(R.id.mute_image);
 
         LocalBroadcastManager.getInstance(getActivity()).registerReceiver(bluetoothConnectReceiver, new IntentFilter(BT.BLUETOOTH_CONNECTED));
         //Fired when the connection is lost
@@ -129,7 +135,7 @@ public class DashboardFragment extends Fragment {
         return view;
     }
 
-    BroadcastReceiver bluetoothConnectReceiver=new BroadcastReceiver() {
+    BroadcastReceiver bluetoothConnectReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             bluetoothConnection.setTextColor(Color.GREEN);
@@ -137,7 +143,7 @@ public class DashboardFragment extends Fragment {
         }
     };
 
-    BroadcastReceiver bluetoothDisconnectReceiver=new BroadcastReceiver() {
+    BroadcastReceiver bluetoothDisconnectReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             bluetoothConnection.setTextColor(Color.RED);
@@ -147,14 +153,14 @@ public class DashboardFragment extends Fragment {
     };
 
 
-    BroadcastReceiver bluetoothNewMessage=new BroadcastReceiver() {
+    BroadcastReceiver bluetoothNewMessage = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             //bluetoothConnection.setTextColor(Color.BLUE);
-            final String raw=bt.getBtMsg();
+            final String raw = bt.getBtMsg();
             //bluetoothConnection.setText("raw"+raw);
 
-            if(raw!=null&&raw.contains("[")&&raw.contains("]"))
+            if (raw != null && raw.contains("[") && raw.contains("]"))
                 serialDecode(raw);          /////   serial decode method removes start and end characters
 
 
@@ -168,15 +174,14 @@ public class DashboardFragment extends Fragment {
             //lastUpdatedlbl.setText(getLastReadTime());
 
 
-            if (Float.parseFloat(getTemp())>31.5) {
+            if (Float.parseFloat(getTemp()) > 31.5) {
                 dashboardO2.setText(getSPO2());
-
                 dashboardHeartRate.setText(getHR());
-                
-                if(getCurrentMode()==3)notifyAttempt();
-                
-            } else{
-               ///// "Please wear the health monitor properly"
+
+                if (Integer.parseInt(getCurrentMode())== 3) notifyAttempt();
+
+            } else {
+                ///// "Please wear the health monitor properly"
                 dashboardO2.setText("--");
                 dashboardHeartRate.setText("--");
             }
@@ -189,7 +194,7 @@ public class DashboardFragment extends Fragment {
     }
 
     private String getLastReadTime() {
-        final int epox=Integer.parseInt(items[2]);
+        final int epox = Integer.parseInt(items[2]);
         return String.valueOf(45);  //////////////!!!!!!!!!!!!!!!!!    calculate time
     }
 
@@ -203,8 +208,8 @@ public class DashboardFragment extends Fragment {
 
     private String getSPO2() {
 
-        int spo2=Integer.parseInt(items[4]);
-        if (spo2>100)spo2=100;
+        int spo2 = Integer.parseInt(items[4]);
+        if (spo2 > 100) spo2 = 100;
         return String.valueOf(spo2);
 
     }
@@ -221,139 +226,140 @@ public class DashboardFragment extends Fragment {
         return items[6].equals("1");
     }
 
-    private void sendBTCommand(String tag,long value){
-        bt.sendBt(tag+value);
+    private void sendBTCommand(String tag, long value) {
+        bt.sendBt(tag + value);
 
     }
-    
-    int msgCount=0;
-    boolean isNotified=false;
+
+    int msgCount = 0;
+    boolean isNotified = false;
+
     private void notifyAttempt() {
         if (!isNotified) {
-            isNotified=true;
-            String msg="Attention! Threshold values reached \n" +
+            isNotified = true;
+            String msg = "Attention! Threshold values reached \n" +
                     "Patient ID: 002 \n " +
                     "Condition\n" +
                     " Oxygen Saturation:" + getSPO2() +
                     "%\nHeart Rate:" + getHR() +
-                    +"bpm\nBody Temp:" + getTemp() +
+                    "bpm\nBody Temp:" + getTemp() +
                     "*C\nThis is an automated message from iSafty";
             try {
                 msgQ(msg);/////// method to send multiple messages with 3 second delays
-                 buildMessage("Attention!","Device has detected a emergency situation." +
+                buildMessage("Attention!", "Device has detected a emergency situation." +
                         "Your doctor and relatives were notified. Please stay calm !");
-                catch (Exception e) {
-                    buildMessege("Message(s) may not sent!", e.toString());
+            }
+                catch(Exception e){
+                    buildMessage("Message(s) may not sent!", e.toString());
                 }
+            }
         }
-    }
 
 
-    BroadcastReceiver bluetoothConnecting=new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            bluetoothConnection.setTextColor(Color.YELLOW);
-            bluetoothConnection.setText("Connecting...");
+        BroadcastReceiver bluetoothConnecting = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                bluetoothConnection.setTextColor(Color.YELLOW);
+                bluetoothConnection.setText("Connecting...");
 
-        }
-    };
+            }
+        };
 
 //    public void onClick(View v) {
 //        if(v==emModebtn)sendBTCommand(SET_MODE_TAG,3);    ///////////////// send 3 to trigger emergency mode
 //        else if(v==melodybtn)bt.sendBt(ALARM_TAG);   /////////// use bt.sendBt method to send custom data
 //        else if(v==mutebtn)sendBTCommand(SET_MODE_TAG,8);   ///////////////// send 8 to mute device
-//
 //    }
 
-    @Override
-    public void onResume() {
-        bt.setContext(getActivity());
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        bt.setContext(null);
-        super.onPause();
-    }
-
-    private void serialDecode(String string) {
-
-        try {
-            int begin=string.indexOf("[")+1;
-            int end=string.indexOf("]");
-            final String data=string.substring(begin,end);
-            // return string.replaceAll("-","").replaceAll("<","").replaceAll(">","");
-            items=data.split(",");
-            if(items.length>=7)
-                updateUI();
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
+        @Override
+        public void onResume () {
+            bt.setContext(getActivity());
+            super.onResume();
         }
-    }
 
-     private void msgQ(String msg) {
-        final Handler hander = new Handler();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(3000);                  //// delay in ms
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                hander.post(new Runnable() {
-                    @Override
-                    public void run() {
+        @Override
+        public void onPause () {
+            bt.setContext(null);
+            super.onPause();
+        }
 
-                        if(msgCount<mobileNos.length){
-                            proceedMessege(msg,mobileNos[msgCount]);
-                            msgQ();
+        private void serialDecode (String string){
 
-                        }
-                    }
-                });
+            try {
+                int begin = string.indexOf("[") + 1;
+                int end = string.indexOf("]");
+                final String data = string.substring(begin, end);
+                // return string.replaceAll("-","").replaceAll("<","").replaceAll(">","");
+                items = data.split(",");
+                if (items.length >= 7)
+                    updateUI();
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        }).start();
-    }
-
-
-    private void proceedMessege(boolean markMsg,String mobileNo) {
-        String msg=finalMsgToSend;
-        try{
-
-            //TelephonyInfo telephonyInfo = TelephonyInfo.getInstance(this);
-            // boolean isDualSIM = telephonyInfo.isDualSIM();
-            //if(isDualSIM){
-
-            SmsManager smsManager = SmsManager.getDefault();
-            PendingIntent pi;
-            String SENT="SMS_SENT";
-            pi=PendingIntent.getBroadcast(this,0,new Intent(SENT),0);
-            smsManager.sendTextMessage(mobileNo, null, msg,pi, null);
-            toastMsg("sending...");
-
-        }
-        catch (Exception e){
-            buildMessage("Error sending message",e.toString());
         }
 
-    }
+        private void msgQ (String msg){
+            final Handler hander = new Handler();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(3000);                  //// delay in ms
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    hander.post(new Runnable() {
+                        @Override
+                        public void run() {
 
-    private void toastMsg(String s) {
-        Toast toast= Toast.makeText(this,s,Toast.LENGTH_SHORT);
-        toast.show();
-    }
+                            if (msgCount < mobileNos.length) {
+                                proceedMessege(msg, mobileNos[msgCount]);
+                                msgQ(msg);
 
-        private void buildMessege(String title, String m) {
-            AlertDialog.Builder builder=new AlertDialog.Builder(this);
+                            }
+                        }
+                    });
+                }
+            }).start();
+        }
+
+
+        private void proceedMessege ( String msg, String mobileNo){
+
+            try {
+
+                //TelephonyInfo telephonyInfo = TelephonyInfo.getInstance(this);
+                // boolean isDualSIM = telephonyInfo.isDualSIM();
+                //if(isDualSIM){
+
+                SmsManager smsManager = SmsManager.getDefault();
+                PendingIntent pi;
+                String SENT = "SMS_SENT";
+                pi = PendingIntent.getBroadcast(getActivity(), 0, new Intent(SENT), 0);
+                smsManager.sendTextMessage(mobileNo, null, msg, pi, null);
+                toastMsg("sending...");
+
+            } catch (Exception e) {
+                buildMessage("Error sending message", e.toString());
+            }
+
+        }
+
+        private void toastMsg (String s){
+            Toast toast = Toast.makeText(getActivity(), s, Toast.LENGTH_SHORT);
+            toast.show();
+        }
+
+        private void buildMessage(String title, String m){
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setCancelable(true);
             builder.setTitle(title);
             builder.setMessage(m);
             builder.show();
         }
+
 
 
 }
