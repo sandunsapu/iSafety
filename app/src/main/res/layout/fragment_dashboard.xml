@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragments.DashboardFragment"
     android:background="@color/mainBackground"
-    tools:context=".Fragments.DashboardFragment">
+    >
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/mainBackground"
+    >
+
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
     android:id="@+id/dashboard_logo"
     android:layout_width="wrap_content"
     android:layout_height="100dp"
-    android:layout_marginTop="5dp"
+    android:layout_marginTop="10dp"
     android:src="@drawable/new_logo_navigation"
     android:contentDescription="@string/logodashboard" />
 
@@ -19,7 +29,7 @@
         android:id="@+id/text_line_dashboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="120dp"
         android:background="@color/colorPrimary"
         android:fontFamily="@font/gothic"
         android:paddingLeft="30dp"
@@ -50,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dashboard_o2_level"
-            android:text="97"
+            android:text="--"
             android:textSize="50sp"
             android:layout_gravity="center_vertical"
             />
@@ -77,7 +87,7 @@
 
         >
         <ImageView
-            android:layout_width="64dp"
+            android:layout_width="40dp"
             android:layout_height="80dp"
             android:id="@+id/dashboard_temp_picture"
             android:src="@drawable/dash_body_temp"
@@ -88,8 +98,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dashboard_temp_level"
-            android:text="35"
-            android:textSize="45sp"
+            android:text="--.--"
+            android:textSize="30sp"
             android:layout_gravity="center_vertical"
 
             />
@@ -128,7 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dashboard_heat_rate_level"
-            android:text="67"
+            android:text="--"
             android:textSize="60sp"
             android:layout_gravity="center_vertical"
             android:gravity="center"
@@ -214,7 +224,45 @@
 
     </LinearLayout>
 
+    <Button
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:id="@+id/mute_btn"
+        android:text="Silent Mode"
+        android:textAllCaps="false"
+        android:layout_marginTop="660dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/buttons"
+        />
+
+    <Button
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:id="@+id/emergency_mode_btn"
+        android:text="Emergency Mode\n(Demo)"
+        android:textColor="@color/white"
+        android:background="@drawable/buttons"
+        android:textAllCaps="false"
+        android:layout_marginTop="660dp"
+        android:layout_marginLeft="250dp"
+        />
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/mute_image"
+        android:src="@drawable/ic_baseline_volume_off"
+        android:layout_marginTop="660dp"
+        android:layout_marginLeft="170dp"
+        android:visibility="invisible"
+        />
+
+
+
+
 
 
 
 </FrameLayout>
+</ScrollView>

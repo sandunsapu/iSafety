@@ -1,4 +1,4 @@
-package com.apps.tc.cqrpro;
+package com.example.isafetybots;
 
 import java.lang.reflect.Method;
 

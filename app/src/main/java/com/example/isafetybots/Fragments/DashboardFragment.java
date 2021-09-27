@@ -88,12 +88,26 @@ public class DashboardFragment extends Fragment {
 
         bt=BT.getInstance();
 
-        //emModebtn=findViewById(R.id.emergency_btn);
+        emModebtn=view.findViewById(R.id.emergency_mode_btn);
         //melodybtn=findViewById(R.id.melody_btn);
-        //mutebtn=findViewById(R.id.mute_btn);
-        //emModebtn.setOnClickListener(this);
-        //melodybtn.setOnClickListener(this);
-        //mutebtn.setOnClickListener(this);
+        mutebtn=view.findViewById(R.id.mute_btn);
+        emModebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sendBTCommand(SET_MODE_TAG,3);    ///////////////// send 3 to trigger emergency mode
+
+            }
+        });
+        //melodybtn.setOnClickListener((View.OnClickListener) this);
+        mutebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sendBTCommand(SET_MODE_TAG,8);   ///////////////// send 8 to mute device
+
+            }
+        });
 
         dashboardHeartRate=view.findViewById(R.id.dashboard_heat_rate_level);
         dashboardO2=view.findViewById(R.id.dashboard_o2_level);
@@ -102,7 +116,7 @@ public class DashboardFragment extends Fragment {
         //lastUpdatedlbl=findViewById(R.id.last_tv);
         bluetoothConnection=view.findViewById(R.id.dashboard_bluetooth_connection);
 
-        //muteimg=findViewById(R.id.mute_img);
+        muteimg=view.findViewById(R.id.mute_image);
 
         LocalBroadcastManager.getInstance(getActivity()).registerReceiver(bluetoothConnectReceiver, new IntentFilter(BT.BLUETOOTH_CONNECTED));
         //Fired when the connection is lost
@@ -153,9 +167,10 @@ public class DashboardFragment extends Fragment {
             dashboardTemp.setText(getTemp());
             //lastUpdatedlbl.setText(getLastReadTime());
 
-            if (getTemp()>31.5) {
-                dashboardO2.setText(getSPO2());             
-                
+
+            if (Float.parseFloat(getTemp())>31.5) {
+                dashboardO2.setText(getSPO2());
+
                 dashboardHeartRate.setText(getHR());
                 
                 if(getCurrentMode()==3)notifyAttempt();
@@ -243,12 +258,12 @@ public class DashboardFragment extends Fragment {
         }
     };
 
-    public void onClick(View v) {
-        if(v==emModebtn)sendBTCommand(SET_MODE_TAG,3);    ///////////////// send 3 to trigger emergency mode
-        else if(v==melodybtn)bt.sendBt(ALARM_TAG);   /////////// use bt.sendBt method to send custom data
-        else if(v==mutebtn)sendBTCommand(SET_MODE_TAG,8);   ///////////////// send 8 to mute device
-
-    }
+//    public void onClick(View v) {
+//        if(v==emModebtn)sendBTCommand(SET_MODE_TAG,3);    ///////////////// send 3 to trigger emergency mode
+//        else if(v==melodybtn)bt.sendBt(ALARM_TAG);   /////////// use bt.sendBt method to send custom data
+//        else if(v==mutebtn)sendBTCommand(SET_MODE_TAG,8);   ///////////////// send 8 to mute device
+//
+//    }
 
     @Override
     public void onResume() {

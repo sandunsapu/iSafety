@@ -86,7 +86,7 @@ public class BT {
         return btMsg;
     }
 
-    boolean isConnected() {
+    public boolean isConnected() {
         return mBluetooth.isConnected();
     }
 
