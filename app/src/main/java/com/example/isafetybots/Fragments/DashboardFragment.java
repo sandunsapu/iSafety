@@ -41,7 +41,7 @@ public class DashboardFragment extends Fragment {
     private ImageView muteimg;
     private final String SET_TIME_TAG = "TI", SET_MODE_TAG = "SM", SET_HRTHRESHOLD_TAG = "TH", ALARM_TAG = "SING";
     private String[] items = {"0", "0", "0", "0", "0", "0", "0"};
-    private String[] mobileNos = {"0767952020", "0772741400", "0784320006", "0763489016", "0717986286"};
+    private String[] mobileNos = {"0786003757", "0772741400", "0784320006", "0763489016", "0787110008"};
 
 
 
@@ -237,17 +237,16 @@ public class DashboardFragment extends Fragment {
     private void notifyAttempt() {
         if (!isNotified) {
             isNotified = true;
-            String msg = "Attention! Threshold values reached \n" +
-                    "Patient ID: 002 \n " +
-                    "Condition\n" +
-                    " Oxygen Saturation:" + getSPO2() +
+            String msg = "Attention! Threshold values reached\n" +
+                    "Patient ID:002\n" +
+                    "Oxygen Saturation:" + getSPO2() +
                     "%\nHeart Rate:" + getHR() +
                     "bpm\nBody Temp:" + getTemp() +
-                    "*C\nThis is an automated message from iSafty";
+                    "*C\nThis is an automated message from iSafety";
             try {
                 msgQ(msg);/////// method to send multiple messages with 3 second delays
-                buildMessage("Attention!", "Device has detected a emergency situation." +
-                        "Your doctor and relatives were notified. Please stay calm !");
+                buildMessage("Attention!", "Device has detected an Emergency Situation." +
+                        "Your Doctor and Relatives were Notified. Please Stay Calm !");
             }
                 catch(Exception e){
                     buildMessage("Message(s) may not sent!", e.toString());
@@ -317,7 +316,7 @@ public class DashboardFragment extends Fragment {
                             if (msgCount < mobileNos.length) {
                                 proceedMessege(msg, mobileNos[msgCount]);
                                 msgQ(msg);
-
+                                msgCount++;
                             }
                         }
                     });
