@@ -279,52 +279,7 @@ public class DashboardFragment extends Fragment {
         }
     }
 
-    private void msgQ() {
-        final Handler hander = new Handler();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                hander.post(new Runnable() {
-                    @Override
-                    public void run() {
-                 
-                        if(mo
-                        blink();
-                    }
-                });
-            }
-        }).start();
-    }
-    
-    
-   private void proceedMessege(boolean markMsg,String mobileNo) {
-        String msg=finalMsgToSend;
-        try{
-          
-            //TelephonyInfo telephonyInfo = TelephonyInfo.getInstance(this);
-           // boolean isDualSIM = telephonyInfo.isDualSIM();
-            //if(isDualSIM){
-          
-                SmsManager smsManager = SmsManager.getDefault();
-                PendingIntent pi;
-                String SENT="SMS_SENT";
-                pi=PendingIntent.getBroadcast(this,0,new Intent(SENT),0);
-                smsManager.sendTextMessage(mobileNo, null, msg,pi, null);
-                toastMsg("sending...");
-           
-        }
-        catch (Exception e){
-            buildMessage("Error sending message",e.toString());
-        }
-
-    }
-    
-    private void msgQ(String msg) {
+     private void msgQ(String msg) {
         final Handler hander = new Handler();
         new Thread(new Runnable() {
             @Override
@@ -384,7 +339,6 @@ public class DashboardFragment extends Fragment {
             builder.setMessage(m);
             builder.show();
         }
-
 
 
 }
