@@ -36,7 +36,7 @@ public class DashboardFragment extends Fragment {
     private ImageView muteimg;
     private final String SET_TIME_TAG="TI",SET_MODE_TAG="SM",SET_HRTHRESHOLD_TAG="TH",ALARM_TAG="SING";
     private String[] items={"0","0","0","0","0","0","0"};
-
+    private String[] mobileNos={"0767952020","0772741400","0784320006","0763489016","0717986286"}
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -167,9 +167,14 @@ public class DashboardFragment extends Fragment {
             dashboardTemp.setText(getTemp());
             //lastUpdatedlbl.setText(getLastReadTime());
 
-            if (Float.parseFloat(getTemp())>32) {
+
+            if (Float.parseFloat(getTemp())>31.5) {
                 dashboardO2.setText(getSPO2());
+
                 dashboardHeartRate.setText(getHR());
+                
+                if(getCurrentMode()==3)notifyAttempt();
+                
             } else{
                ///// "Please wear the health monitor properly"
                 dashboardO2.setText("--");
@@ -220,6 +225,28 @@ public class DashboardFragment extends Fragment {
         bt.sendBt(tag+value);
 
     }
+    
+    int msgCount=0;
+    boolean isNotified=false;
+    private void notifyAttempt() {
+        if (!isNotified) {
+            isNotified=true;
+            String msg="Attention! Threshold values reached \n" +
+                    "Patient ID: 002 \n " +
+                    "Condition\n" +
+                    " Oxygen Saturation:" + getSPO2() +
+                    "%\nHeart Rate:" + getHR() +
+                    +"bpm\nBody Temp:" + getTemp() +
+                    "*C\nThis is an automated message from iSafty";
+            try {
+                msgQ(msg);/////// method to send multiple messages with 3 second delays
+                 buildMessage("Attention!","Device has detected a emergency situation." +
+                        "Your doctor and relatives were notified. Please stay calm !");
+                catch (Exception e) {
+                    buildMessege("Message(s) may not sent!", e.toString());
+                }
+        }
+    }
 
 
     BroadcastReceiver bluetoothConnecting=new BroadcastReceiver() {
@@ -267,7 +294,67 @@ public class DashboardFragment extends Fragment {
         }
     }
 
-   
+     private void msgQ(String msg) {
+        final Handler hander = new Handler();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(3000);                  //// delay in ms
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                hander.post(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        if(msgCount<mobileNos.length){
+                            proceedMessege(msg,mobileNos[msgCount]);
+                            msgQ();
+
+                        }
+                    }
+                });
+            }
+        }).start();
+    }
+
+
+    private void proceedMessege(boolean markMsg,String mobileNo) {
+        String msg=finalMsgToSend;
+        try{
+
+            //TelephonyInfo telephonyInfo = TelephonyInfo.getInstance(this);
+            // boolean isDualSIM = telephonyInfo.isDualSIM();
+            //if(isDualSIM){
+
+            SmsManager smsManager = SmsManager.getDefault();
+            PendingIntent pi;
+            String SENT="SMS_SENT";
+            pi=PendingIntent.getBroadcast(this,0,new Intent(SENT),0);
+            smsManager.sendTextMessage(mobileNo, null, msg,pi, null);
+            toastMsg("sending...");
+
+        }
+        catch (Exception e){
+            buildMessage("Error sending message",e.toString());
+        }
+
+    }
+
+    private void toastMsg(String s) {
+        Toast toast= Toast.makeText(this,s,Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+        private void buildMessege(String title, String m) {
+            AlertDialog.Builder builder=new AlertDialog.Builder(this);
+            builder.setCancelable(true);
+            builder.setTitle(title);
+            builder.setMessage(m);
+            builder.show();
+        }
+
 
 }
 
