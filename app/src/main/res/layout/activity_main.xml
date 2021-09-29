@@ -8,66 +8,75 @@
     android:background="#FADBEA"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/demo_logo"
+        android:src="@drawable/demo"
+        android:scaleType="fitCenter"
+        android:layout_alignParentEnd="true"
+        />
+
+    <ImageView
         android:id="@+id/app_logo"
-        android:layout_width="408dp"
-        android:layout_height="142dp"
-
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="228dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="22dp"
-        android:adjustViewBounds="true"
-        android:cropToPadding="true"
-        android:scaleType="centerInside"
-        android:src="@drawable/logo"
-        android:visibility="visible" />
-
-    <TextView
-        android:id="@+id/app_slogan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="355dp"
-        android:layout_marginEnd="116dp"
-        android:text="@string/be_safe_with_us"
-        android:textAlignment="center"
-        android:textColor="#808080"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:layout_width="300dp"
+        android:layout_height="260dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/new_logo"
+        android:layout_marginTop="100dp"
         />
 
     <Button
         android:id="@+id/patientbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/app_slogan"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="-141dp"
         android:background="@drawable/buttons"
         android:padding="20dp"
         android:text="Patient"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_below="@+id/app_logo"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/doctorbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/patientbtn"
+        android:layout_below="@+id/patientbtn"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="-97dp"
         android:background="@drawable/graybuttons"
         android:padding="20dp"
         android:text="Doctor"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/description"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:text="iSafety 1.0"
+        android:layout_above="@+id/description2"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/description2"
+        android:layout_alignParentBottom="true"
+        android:text="iSafety Private(Ltd.)  © 2021"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"
+        />
+
 
 
 </RelativeLayout>

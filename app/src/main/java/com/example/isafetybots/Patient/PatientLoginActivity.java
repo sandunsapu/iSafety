@@ -14,18 +14,23 @@ import android.widget.Toast;
 
 import com.example.isafetybots.Model.Patients;
 import com.example.isafetybots.NavigationPane.PatientNavigationActivity;
+import com.example.isafetybots.Prevalent.Prevalent;
 import com.example.isafetybots.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.rey.material.widget.CheckBox;
+
+import io.paperdb.Paper;
 
 public class PatientLoginActivity extends AppCompatActivity {
     private Button loginButton,signInButton;
     private EditText inputMobile,inputPassword;
     private ProgressDialog loadingBar;
     private String parentDbName="Patients";
+    private CheckBox checkBoxRememberMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,10 @@ public class PatientLoginActivity extends AppCompatActivity {
         inputMobile=(EditText) findViewById(R.id.login_mobile_input);
         inputPassword=(EditText) findViewById(R.id.login_password_input);
         loadingBar=new ProgressDialog(this);
+        checkBoxRememberMe=(CheckBox) findViewById(R.id.rememberme_chkbx);
+
+        Paper.init(this);
+
 
 
         signInButton.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +95,12 @@ public class PatientLoginActivity extends AppCompatActivity {
     }
 
     private void AllowAccessToAccount(String mobile, String password) {
+
+        if(checkBoxRememberMe.isChecked())
+        {
+            Paper.book().write(Prevalent.patientPhoneKey,inputMobile);
+        }
+
 
         final DatabaseReference RootRef;
         RootRef= FirebaseDatabase.getInstance().getReference();
