@@ -30,4 +30,5 @@
     <string name="change_doctor">Change Doctor</string>
     <string name="emergency_contacts">Emergency Contacts</string>
     <string name="report_problem">Report Problem</string>
+    <string name="todo">TODO</string>
 </resources>
