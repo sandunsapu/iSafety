@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/dashboard_o2_level"
             android:text="--"
-            android:textSize="50sp"
+            android:textSize="30sp"
             android:layout_gravity="center_vertical"
             />
         <TextView
