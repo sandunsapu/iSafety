@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.isafetybots">
 
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailedReportsActivity"></activity>
+        <activity android:name=".Doctor.DoctorNotificationsActivity"></activity>
+        <activity android:name=".DetailedReportsActivity" />
         <activity android:name=".Doctor.DoctorSendInstructionsActivity" />
         <activity android:name=".Doctor.DoctorPatientListActivity" />
         <activity android:name=".Doctor.DoctorDashboardActivity" />

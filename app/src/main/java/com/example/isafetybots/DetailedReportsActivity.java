@@ -21,11 +21,11 @@ public class DetailedReportsActivity extends AppCompatActivity {
         graphView2 = (GraphView) findViewById(R.id.graphView2);
         graphView3 = (GraphView) findViewById(R.id.graphView3);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(3, 2),
-                new DataPoint(4, 6)
+                new DataPoint(0, 75),
+                new DataPoint(1, 85),
+                new DataPoint(2, 83),
+                new DataPoint(3, 77),
+                new DataPoint(4, 89)
         });
         graphView.addSeries(series);
         graphView2.addSeries(series);

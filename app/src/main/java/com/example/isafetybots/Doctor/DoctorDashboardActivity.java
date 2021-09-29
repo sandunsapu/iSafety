@@ -33,5 +33,12 @@ public class DoctorDashboardActivity extends AppCompatActivity {
 
             }
         });
+        notificationsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DoctorDashboardActivity.this,DoctorNotificationsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

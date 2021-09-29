@@ -34,5 +34,13 @@ public class DoctorSendInstructionsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        sendBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DoctorSendInstructionsActivity.this, DoctorPatientListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

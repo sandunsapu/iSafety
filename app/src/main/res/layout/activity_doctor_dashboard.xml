@@ -32,12 +32,12 @@
         />
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="230dp"
         android:id="@+id/image_parent_list"
-        android:src="@drawable/dash_heart_rate"
+        android:src="@drawable/patients_list"
         />
     <Button
         android:layout_width="match_parent"
@@ -61,15 +61,15 @@
         android:layout_height="70dp"
         android:layout_below="@+id/patients_list_btn"
         android:src="@drawable/ic_baseline_calendar"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="50dp"
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:id="@+id/calender_btn"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:text="Calendar"

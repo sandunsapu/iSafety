@@ -7,12 +7,12 @@
     tools:context=".Doctor.DoctorPatientListActivity">
 
     <TextView
-        android:id="@+id/dashboard"
+        android:id="@+id/doctor_notifications"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:fontFamily="@font/gothic"
-        android:text="Patients List"
+        android:text="Notifications"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:paddingLeft="30dp"
@@ -22,13 +22,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:id="@+id/patient_viewer"
-        android:layout_below="@id/dashboard"
+        android:id="@+id/notification_viewer"
+        android:layout_below="@id/doctor_notifications"
         android:background="@color/gray"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:orientation="vertical"
+        android:paddingLeft="10dp"
         >
         <TextView
             android:layout_width="match_parent"
@@ -42,14 +43,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/patient_age"
-            android:text="25 Years"
+            android:text=""
             android:textSize="15sp"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/patient_description"
-            android:text="Heart Problem"
+            android:text="Checkup Requested"
             android:textSize="15sp"
             />
 
@@ -57,13 +58,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:id="@+id/patient_viewer2"
-        android:layout_below="@id/patient_viewer"
+        android:id="@+id/notification_viewer2"
+        android:layout_below="@id/notification_viewer"
         android:background="@color/gray"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:orientation="vertical"
+        android:paddingLeft="10dp"
         >
         <TextView
             android:layout_width="match_parent"
@@ -77,14 +79,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/patient_age2"
-            android:text="22 Years"
+            android:text=""
             android:textSize="15sp"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/patient_description2"
-            android:text="Heart Problem | Diabetics"
+            android:text="Checkup Requested"
             android:textSize="15sp"
             />
 
@@ -92,13 +94,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:id="@+id/patient_viewer3"
-        android:layout_below="@id/patient_viewer2"
+        android:id="@+id/notification_viewer3"
+        android:layout_below="@id/notification_viewer2"
         android:background="@color/gray"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:orientation="vertical"
+        android:paddingLeft="10dp"
         >
         <TextView
             android:layout_width="match_parent"
@@ -112,14 +115,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/patient_age3"
-            android:text="25 Years"
+            android:text=""
             android:textSize="15sp"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/patient_description3"
-            android:text="Heart Problem"
+            android:text="Checkup Requested"
             android:textSize="15sp"
             />
 
