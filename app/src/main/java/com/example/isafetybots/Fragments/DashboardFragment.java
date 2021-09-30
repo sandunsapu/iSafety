@@ -41,7 +41,7 @@ public class DashboardFragment extends Fragment {
     private ImageView muteimg;
     private final String SET_TIME_TAG = "TI", SET_MODE_TAG = "SM", SET_HRTHRESHOLD_TAG = "TH", ALARM_TAG = "SING";
     private String[] items = {"0", "0", "0", "0", "0", "0", "0"};
-    private String[] mobileNos = {"0786003757", "0772741400", "0784320006", "0763489016", "0787110008"};
+    private String[] mobileNos = {"0786113200", "0772741400", "0784320006", "0763489016", "0787110008","0767952020"};
 
 
 
