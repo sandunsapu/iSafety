@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.example.isafetybots.Patient.PatientLoginActivity;
 import com.example.isafetybots.R;
 
+import io.paperdb.Paper;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SettingsFragment#newInstance} factory method to
@@ -76,6 +78,9 @@ public class SettingsFragment extends Fragment {
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Paper.book().destroy();
+
                 Intent intent= new Intent(getActivity(), PatientLoginActivity.class);
                 intent.putExtra("Logout","Logging Out");
                 startActivity(intent);

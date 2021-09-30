@@ -98,7 +98,8 @@ public class PatientLoginActivity extends AppCompatActivity {
 
         if(checkBoxRememberMe.isChecked())
         {
-            Paper.book().write(Prevalent.patientPhoneKey,inputMobile);
+            Paper.book().write(Prevalent.patientPhoneKey,mobile);
+            Paper.book().write(Prevalent.patientPasswordKey,password);
         }
 
 
